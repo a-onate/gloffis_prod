@@ -1,0 +1,6 @@
+name: gloffis
+channels:
+  - defaults
+dependencies:
+  - pandas
+  - pyodbc
