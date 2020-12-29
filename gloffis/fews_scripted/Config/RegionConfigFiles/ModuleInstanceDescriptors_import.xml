@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
+    <moduleInstanceDescriptor id="import_nwp" />
+    <moduleInstanceDescriptor id="import_reanalysis_ECMWF_era5" />
+    <moduleInstanceDescriptor id="import_nwp_DWD_icon-eu" />
+    <moduleInstanceDescriptor id="postprocess_import_reanalysis_ECMWF_era5" />
+    <moduleInstanceDescriptor id="postprocess_import_nwp_DWD_icon-eu" />
+    <moduleInstanceDescriptor id="create_reanalysis_DWD_icon-eu" />
+</moduleInstanceDescriptors>

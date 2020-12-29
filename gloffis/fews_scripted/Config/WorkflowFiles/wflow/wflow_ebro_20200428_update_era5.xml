@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.0">
+    <properties>
+        <string key="_DATA_PROD_MODULE_INSTANCE" value="import_reanalysis_ECMWF_era5" />
+        <string key="_DATA_PROD" value="era5" />
+        <string key="_DATA_PROD_TEMPORAL_RES" value="1" />
+        <string key="_REL_VIEW_PERIOD_START" value="-6" />
+        <string key="_REL_VIEW_PERIOD_END" value="-4" />
+        <string key="_WARM_STATE_START" value="-7" />
+        <string key="_WARM_STATE_MODULE_INSTANCE" value="wflow_ebro_20200428_update_era5" />
+        <string key="_WFLOW_MODEL" value="wflow_ebro_20200428" />
+        <string key="_WFLOW_MODEL_TEMPORAL_RES" value="6" />
+        <string key="_WFLOW_BUNDLE" value="2020.1.1" />
+        <string key="_EXPIRY_TIME" value="9" />
+    </properties>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>preprocess_wflow_ebro_20200428_update_era5</moduleInstanceId>
+        <moduleConfigFileName>temporal_spatial_processing_observation</moduleConfigFileName>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>wflow_ebro_20200428_update_era5</moduleInstanceId>
+        <moduleConfigFileName>wflow_sbm_update_template</moduleConfigFileName>
+    </activity>
+</workflow>

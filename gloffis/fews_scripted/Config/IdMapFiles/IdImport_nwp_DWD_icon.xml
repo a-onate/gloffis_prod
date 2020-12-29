@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
+    <parameter external="ASWDIFD_S" internal="ssrd_dif_acc" />
+    <parameter external="aswdifd_s" internal="ssrd_dif_acc" />
+    <parameter external="ASWDIR_S" internal="ssrd_dir_acc" />
+    <parameter external="aswdir_s" internal="ssrd_dir_acc" />
+    <parameter external="TOT_PREC" internal="tp" />
+    <parameter external="tot_prec" internal="tp" />
+    <parameter external="T_2M" internal="2t" />
+    <parameter external="t_2m" internal="2t" />
+</idMap>

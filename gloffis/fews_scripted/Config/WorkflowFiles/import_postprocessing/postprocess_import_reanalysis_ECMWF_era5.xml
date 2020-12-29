@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.0">
+    <properties>
+        <string key="_REANALYSIS_MODULE_INSTANCE" value="import_reanalysis_ECMWF_era5" />
+        <string key="_REANALYSIS_PROD" value="era5" />
+        <string key="_REANALYSIS_TEMPORAL_RESOLUTION" value="1" />
+        <string key="_REL_VIEW_PERIOD_START" value="-7" />
+        <string key="_REL_VIEW_PERIOD_END" value="-4" />
+        <string key="_EXPIRY_TIME" value="9" />
+    </properties>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>calculate_pet_makkink</moduleInstanceId>
+        <moduleConfigFileName>calculate_pet_makkink_template_reanalysis</moduleConfigFileName>
+    </activity>
+</workflow>

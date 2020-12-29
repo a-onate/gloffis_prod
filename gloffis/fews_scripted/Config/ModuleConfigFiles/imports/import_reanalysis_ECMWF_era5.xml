@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+    <import>
+        <general>
+            <importType>NETCDF-CF_GRID</importType>
+            <folder>$IMPORT_FOLDER$/era5/</folder>
+            <deleteImportedFiles>true</deleteImportedFiles>
+            <idMapId>IdImport_reanalysis_ECMWF_era5</idMapId>
+            <unitConversionsId>ImportUnitConversions</unitConversionsId>
+            <importTimeZone>
+                <timeZoneOffset>+00:00</timeZoneOffset>
+            </importTimeZone>
+            <dataFeedId>era5</dataFeedId>
+            <actionLogEventTypeId>import_reanalysis_ECMWF_era5.New</actionLogEventTypeId>
+        </general>
+        <timeSeriesSet>
+            <moduleInstanceId>import_reanalysis_ECMWF_era5</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>tp</parameterId>
+            <locationId>era5</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1" />
+            <readWriteMode>add originals</readWriteMode>
+            <expiryTime unit="hour" multiplier="9" />
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>import_reanalysis_ECMWF_era5</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>2t</parameterId>
+            <locationId>era5</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1" />
+            <readWriteMode>add originals</readWriteMode>
+            <expiryTime unit="hour" multiplier="9" />
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>import_reanalysis_ECMWF_era5</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>ssrd</parameterId>
+            <locationId>era5</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep unit="hour" multiplier="1" />
+            <readWriteMode>add originals</readWriteMode>
+            <expiryTime unit="hour" multiplier="9" />
+        </timeSeriesSet>
+        <externUnit parameterId="tp" unit="m" />
+        <externUnit parameterId="2t" unit="K" />
+        <externUnit parameterId="ssrd" unit="J/m2/h" />
+    </import>
+</timeSeriesImportRun>

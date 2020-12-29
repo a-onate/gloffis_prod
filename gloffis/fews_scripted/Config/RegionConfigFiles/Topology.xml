@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topology xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topology.xsd">
+    <enableAutoRun>false</enableAutoRun>
+    <nodes id="import_nwp" name="Import and post-process nwp forecast">
+        <nodes id="icon-eu" name="icon-eu">
+            <showModifiers>false</showModifiers>
+            <node id="import_icon-eu" name="Import icon-eu">
+                <workflowId>import_nwp_DWD_icon-eu</workflowId>
+                <localRun>false</localRun>
+            </node>
+            <node id="post-process_import_icon-eu" name="Post-process import icon-eu">
+                <workflowId>postprocess_import_nwp_DWD_icon-eu</workflowId>
+                <localRun>false</localRun>
+            </node>
+        </nodes>
+    </nodes>
+    <nodes id="import_reanalysis" name="Import and post-process reanalysis products">
+        <nodes id="era5" name="era5">
+            <showModifiers>false</showModifiers>
+            <node id="import_era5" name="Import era5">
+                <workflowId>import_reanalysis_ECMWF_era5</workflowId>
+                <localRun>false</localRun>
+            </node>
+            <node id="post-process_import_era5" name="Post-process import era5">
+                <workflowId>postprocess_import_reanalysis_ECMWF_era5</workflowId>
+                <localRun>false</localRun>
+            </node>
+        </nodes>
+    </nodes>
+    <nodes id="create_reanalysis" name="Create online reanalysis">
+        <showModifiers>false</showModifiers>
+        <node id="reanalysis_icon-eu" name="Create icon-eu based reanalysis">
+            <workflowId>create_reanalysis_DWD_icon-eu</workflowId>
+            <localRun>false</localRun>
+            <showRunApprovedForecastButton>true</showRunApprovedForecastButton>
+        </node>
+    </nodes>
+    <nodes id="wflow_models" name="wflow update, forecast runs">
+        <groupId>wflow</groupId>
+    </nodes>
+</topology>

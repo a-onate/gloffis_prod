@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+    <import>
+        <general>
+            <importType>GRIB2</importType>
+            <folder>$IMPORT_FOLDER$/icon-eu/</folder>
+            <fileNameParameterIdPattern>.*_\d{3}_(.*).grib2*</fileNameParameterIdPattern>
+            <deleteImportedFiles>true</deleteImportedFiles>
+            <idMapId>IdImport_nwp_DWD_icon</idMapId>
+            <unitConversionsId>ImportUnitConversions</unitConversionsId>
+            <importTimeZone>
+                <timeZoneOffset>+00:00</timeZoneOffset>
+            </importTimeZone>
+            <dataFeedId>icon-eu</dataFeedId>
+            <actionLogEventTypeId>import_nwp_DWD_icon-eu.New</actionLogEventTypeId>
+        </general>
+        <timeSeriesSet>
+            <moduleInstanceId>import_nwp_DWD_icon-eu</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>tp</parameterId>
+            <locationId>icon-eu</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1" />
+            <readWriteMode>add originals</readWriteMode>
+            <expiryTime unit="hour" multiplier="9" />
+            <ensembleId>icon-eu</ensembleId>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>import_nwp_DWD_icon-eu</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>2t</parameterId>
+            <locationId>icon-eu</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1" />
+            <readWriteMode>add originals</readWriteMode>
+            <expiryTime unit="hour" multiplier="9" />
+            <ensembleId>icon-eu</ensembleId>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>import_nwp_DWD_icon-eu</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>ssrd_dif_acc</parameterId>
+            <locationId>icon-eu</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1" />
+            <readWriteMode>add originals</readWriteMode>
+            <expiryTime unit="hour" multiplier="9" />
+            <ensembleId>icon-eu</ensembleId>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>import_nwp_DWD_icon-eu</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>ssrd_dir_acc</parameterId>
+            <locationId>icon-eu</locationId>
+            <timeSeriesType>external forecasting</timeSeriesType>
+            <timeStep unit="hour" multiplier="1" />
+            <readWriteMode>add originals</readWriteMode>
+            <expiryTime unit="hour" multiplier="9" />
+            <ensembleId>icon-eu</ensembleId>
+        </timeSeriesSet>
+        <externUnit parameterId="tp" unit="mm" cumulativeSum="true" />
+        <externUnit parameterId="2t" unit="K" />
+        <externUnit parameterId="ssrd_dif_acc" unit="W/m2" cumulativeMean="true" />
+        <externUnit parameterId="ssrd_dir_acc" unit="W/m2" cumulativeMean="true" />
+        <interpolateSerie parameterId="tp" interpolate="true" />
+        <interpolateSerie parameterId="2t" interpolate="true" />
+        <interpolateSerie parameterId="ssrd_dif_acc" interpolate="true" />
+        <interpolateSerie parameterId="ssrd_dir_acc" interpolate="true" />
+    </import>
+</timeSeriesImportRun>

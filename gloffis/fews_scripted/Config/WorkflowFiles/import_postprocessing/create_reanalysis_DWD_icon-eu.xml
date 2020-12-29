@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.0">
+    <properties>
+        <string key="_NWP_PROD" value="icon-eu" />
+        <string key="_PROVIDER" value="DWD" />
+        <string key="_NWP_TEMPORAL_RES" value="1" />
+        <string key="_EXPIRY_TIME" value="9" />
+    </properties>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>create_reanalysis_DWD_icon-eu</moduleInstanceId>
+        <moduleConfigFileName>create_reanalysis_template</moduleConfigFileName>
+    </activity>
+</workflow>

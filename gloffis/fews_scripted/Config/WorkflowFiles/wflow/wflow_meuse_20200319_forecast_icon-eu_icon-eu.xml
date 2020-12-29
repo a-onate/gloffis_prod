@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.0">
+    <properties>
+        <string key="_FCST_PROD_MODULE_INSTANCE" value="import_nwp_DWD_icon-eu" />
+        <string key="_FCST_PROD" value="icon-eu" />
+        <string key="_OBS_PROD" value="icon-eu" />
+        <string key="_PROVIDER" value="DWD" />
+        <string key="_FCST_PROD_TEMPORAL_RES" value="1" />
+        <string key="_ENSEMBLE" value="icon-eu" />
+        <string key="_WARM_STATE_MODULE_INSTANCE" value="wflow_meuse_20200319_update_icon-eu" />
+        <string key="_WFLOW_MODEL" value="wflow_meuse_20200319" />
+        <string key="_WFLOW_MODEL_TEMPORAL_RES" value="6" />
+        <string key="_WFLOW_BUNDLE" value="2020.1.1" />
+        <string key="_EXPIRY_TIME" value="9" />
+    </properties>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>preprocess_wflow_meuse_20200319_forecast_icon-eu_icon-eu</moduleInstanceId>
+        <moduleConfigFileName>temporal_spatial_processing_nwp_forecast</moduleConfigFileName>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>wflow_meuse_20200319_forecast_icon-eu_icon-eu</moduleInstanceId>
+        <moduleConfigFileName>create_forecast_scenario_wflow</moduleConfigFileName>
+    </activity>
+    <activity>
+        <runIndependent>true</runIndependent>
+        <moduleInstanceId>wflow_meuse_20200319_forecast_icon-eu_icon-eu</moduleInstanceId>
+        <moduleConfigFileName>wflow_sbm_forecast_template</moduleConfigFileName>
+        <ensemble>
+            <ensembleId>icon-eu</ensembleId>
+            <runInLoop>true</runInLoop>
+        </ensemble>
+    </activity>
+</workflow>

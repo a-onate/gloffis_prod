@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topologyGroup xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topologyGroup.xsd">
+    <group id="wflow">
+        <nodes id="wflow_group" name="wflow update, forecast runs">
+            <nodes id="wflow_ebro_20200428" name="wflow_ebro_20200428">
+                <node id="wflow_ebro_20200428_update_icon-eu" name="wflow_ebro_20200428_update_icon-eu">
+                    <workflowId>wflow_ebro_20200428_update_icon-eu</workflowId>
+                </node>
+                <node id="wflow_ebro_20200428_forecast_icon-eu_icon-eu" name="wflow_ebro_20200428_forecast_icon-eu_icon-eu">
+                    <workflowId>wflow_ebro_20200428_forecast_icon-eu_icon-eu</workflowId>
+                </node>
+                <node id="wflow_ebro_20200428_update_era5" name="wflow_ebro_20200428_update_era5">
+                    <workflowId>wflow_ebro_20200428_update_era5</workflowId>
+                </node>
+            </nodes>
+            <nodes id="wflow_ebro_20200617" name="wflow_ebro_20200617">
+                <node id="wflow_ebro_20200617_update_icon-eu" name="wflow_ebro_20200617_update_icon-eu">
+                    <workflowId>wflow_ebro_20200617_update_icon-eu</workflowId>
+                </node>
+                <node id="wflow_ebro_20200617_forecast_icon-eu_icon-eu" name="wflow_ebro_20200617_forecast_icon-eu_icon-eu">
+                    <workflowId>wflow_ebro_20200617_forecast_icon-eu_icon-eu</workflowId>
+                </node>
+                <node id="wflow_ebro_20200617_update_era5" name="wflow_ebro_20200617_update_era5">
+                    <workflowId>wflow_ebro_20200617_update_era5</workflowId>
+                </node>
+            </nodes>
+            <nodes id="wflow_meuse_20200319" name="wflow_meuse_20200319">
+                <node id="wflow_meuse_20200319_update_icon-eu" name="wflow_meuse_20200319_update_icon-eu">
+                    <workflowId>wflow_meuse_20200319_update_icon-eu</workflowId>
+                </node>
+                <node id="wflow_meuse_20200319_forecast_icon-eu_icon-eu" name="wflow_meuse_20200319_forecast_icon-eu_icon-eu">
+                    <workflowId>wflow_meuse_20200319_forecast_icon-eu_icon-eu</workflowId>
+                </node>
+                <node id="wflow_meuse_20200319_update_era5" name="wflow_meuse_20200319_update_era5">
+                    <workflowId>wflow_meuse_20200319_update_era5</workflowId>
+                </node>
+            </nodes>
+        </nodes>
+    </group>
+</topologyGroup>

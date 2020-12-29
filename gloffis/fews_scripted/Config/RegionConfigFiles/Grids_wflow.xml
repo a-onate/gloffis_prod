@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<grids xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/grids.xsd">
+    <regular locationId="wflow_ebro_20200428">
+        <rows>341</rows>
+        <columns>787</columns>
+        <geoDatum>WGS 1984</geoDatum>
+        <firstCellCenter>
+            <x>-4.3958335</x>
+            <y>43.179165</y>
+        </firstCellCenter>
+        <xCellSize>0.0083333</xCellSize>
+        <yCellSize>0.0083333</yCellSize>
+    </regular>
+    <regular locationId="wflow_ebro_20200617">
+        <rows>24</rows>
+        <columns>55</columns>
+        <geoDatum>WGS 1984</geoDatum>
+        <firstCellCenter>
+            <x>-4.2675</x>
+            <y>43.078335</y>
+        </firstCellCenter>
+        <xCellSize>0.116666</xCellSize>
+        <yCellSize>0.116666</yCellSize>
+    </regular>
+    <regular locationId="wflow_meuse_20200319">
+        <rows>461</rows>
+        <columns>377</columns>
+        <geoDatum>WGS 1984</geoDatum>
+        <firstCellCenter>
+            <x>3.5624966</x>
+            <y>51.7791333</y>
+        </firstCellCenter>
+        <xCellSize>0.0083333</xCellSize>
+        <yCellSize>0.0083333</yCellSize>
+    </regular>
+    <regular locationId="wflow_moselle_20200720">
+        <rows>313</rows>
+        <columns>291</columns>
+        <geoDatum>WGS 1984</geoDatum>
+        <firstCellCenter>
+            <x>5.4209</x>
+            <y>50.4208</y>
+        </firstCellCenter>
+        <xCellSize>0.0083333</xCellSize>
+        <yCellSize>0.0083333</yCellSize>
+    </regular>
+</grids>

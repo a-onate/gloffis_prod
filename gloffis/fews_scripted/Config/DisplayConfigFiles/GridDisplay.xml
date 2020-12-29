@@ -1,0 +1,982 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
+    <title>$APPLICATION_NAME$ - Spatial display</title>
+    <defaults>
+        <geoMap>
+            <defaultExtent id="globe" name="world">
+                <left>-180</left>
+                <right>180</right>
+                <top>90</top>
+                <bottom>-90</bottom>
+            </defaultExtent>
+            <extraExtent id="nl" name="The Netherlands">
+                <left>3.3</left>
+                <right>7.3</right>
+                <top>53.6</top>
+                <bottom>50.6</bottom>
+            </extraExtent>
+            <extraExtent id="europe" name="Europe">
+                <left>-15</left>
+                <right>35</right>
+                <top>70</top>
+                <bottom>35</bottom>
+            </extraExtent>
+            <scaleBarVisible>true</scaleBarVisible>
+            <northArrowVisible>true</northArrowVisible>
+            <labelsVisible>true</labelsVisible>
+            <openStreetMapLayer id="osm_streets" name="Open Street Map (openstreetmap.org)">
+                <url>http://tile.openstreetmap.org</url>
+                <visible>false</visible>
+                <cacheDir>$mapLayersCacheDir$/osm</cacheDir>
+            </openStreetMapLayer>
+            <openStreetMapLayer id="osm_toner" name="Open Street Map (Toner)">
+                <url>http://tile.stamen.com/toner</url>
+                <visible>false</visible>
+                <cacheDir>$mapLayersCacheDir$/osm_toner</cacheDir>
+            </openStreetMapLayer>
+            <layer id="arcgis_topo" name="ArcGIS World Topo Map">
+                <className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+                <visible>false</visible>
+                <properties>
+                    <string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%" />
+                    <string key="cacheDir" value="$mapLayersCacheDir$/Esri_topo" />
+                    <int key="minZoomLevel" value="1" />
+                    <int key="maxZoomLevel" value="19" />
+                    <int key="topZoomLevel" value="21" />
+                    <int key="tileSize" value="256" />
+                </properties>
+            </layer>
+            <layer id="arcgis_canvas" name="ArcGIS Canvas World LightGray Base">
+                <className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+                <visible>true</visible>
+                <properties>
+                    <string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%" />
+                    <string key="cacheDir" value="$mapLayersCacheDir$/Esri_Canvas_World_Light_Gray_Base" />
+                    <int key="minZoomLevel" value="1" />
+                    <int key="maxZoomLevel" value="19" />
+                    <int key="topZoomLevel" value="21" />
+                    <int key="tileSize" value="256" />
+                </properties>
+            </layer>
+        </geoMap>
+        <timeDisplayLabels>bottomRight</timeDisplayLabels>
+    </defaults>
+    <defaults>
+        <parameterGroupId>Temperature</parameterGroupId>
+        <classBreaks>
+            <color color="FFFFFF" opaquenessPercentage="80" lowerValue="-293.15" />
+            <color color="E1E1E1" opaquenessPercentage="80" lowerValue="-19" />
+            <color color="BEBEBE" opaquenessPercentage="80" lowerValue="-17" />
+            <color color="B5B5B5" opaquenessPercentage="80" lowerValue="-15" />
+            <color color="565474" opaquenessPercentage="80" lowerValue="-13" />
+            <color color="59447F" opaquenessPercentage="80" lowerValue="-11" />
+            <color color="5A007F" opaquenessPercentage="80" lowerValue="-9" />
+            <color color="32007F" opaquenessPercentage="80" lowerValue="-7" />
+            <color color="000082" opaquenessPercentage="80" lowerValue="-5" />
+            <color color="0033B4" opaquenessPercentage="80" lowerValue="-3" />
+            <color color="0000FF" opaquenessPercentage="80" lowerValue="-1" />
+            <color color="007EFF" opaquenessPercentage="80" lowerValue="1" />
+            <color color="00BEFF" opaquenessPercentage="80" lowerValue="3" />
+            <color color="00FFFF" opaquenessPercentage="80" lowerValue="5" />
+            <color color="00F7C6" opaquenessPercentage="80" lowerValue="7" />
+            <color color="18D78C" opaquenessPercentage="80" lowerValue="9" />
+            <color color="00AA64" opaquenessPercentage="80" lowerValue="11" />
+            <color color="2BAA2B" opaquenessPercentage="80" lowerValue="13" />
+            <color color="2BC82B" opaquenessPercentage="80" lowerValue="15" />
+            <color color="00FF00" opaquenessPercentage="80" lowerValue="17" />
+            <color color="CCFF00" opaquenessPercentage="80" lowerValue="19" />
+            <color color="FFFF00" opaquenessPercentage="80" lowerValue="21" />
+            <color color="EDED7E" opaquenessPercentage="80" lowerValue="23" />
+            <color color="E4CC66" opaquenessPercentage="80" lowerValue="25" />
+            <color color="DCAE49" opaquenessPercentage="80" lowerValue="27" />
+            <color color="FFAA00" opaquenessPercentage="80" lowerValue="29" />
+            <color color="FF5500" opaquenessPercentage="80" lowerValue="31" />
+            <color color="FF0000" opaquenessPercentage="80" lowerValue="33" />
+            <color color="C80000" opaquenessPercentage="80" lowerValue="35" />
+            <color color="780000" opaquenessPercentage="80" lowerValue="37" />
+        </classBreaks>
+    </defaults>
+    <defaults>
+        <parameterGroupId>Precipitation</parameterGroupId>
+        <classBreaks>
+            <color color="white" opaquenessPercentage="30" lowerValue="0" />
+            <color color="7FBCFD" lowerValue="0.25" />
+            <color color="3998FD" lowerValue="0.5" />
+            <color color="6C64FF" lowerValue="1.0" />
+            <color color="4848BF" lowerValue="2.0" />
+            <color color="2020A1" lowerValue="3.0" />
+            <color color="FFFF00" lowerValue="4.0" />
+            <color color="FFCC00" lowerValue="6.0" />
+            <color color="FF9900" lowerValue="8.0" />
+            <color color="EF0000" lowerValue="12.0" />
+            <color color="9C0101" lowerValue="20.0" />
+            <color color="840084" lowerValue="32.0" />
+        </classBreaks>
+    </defaults>
+    <defaults>
+        <parameterGroupId>Radiation</parameterGroupId>
+        <classBreaks>
+            <lowerColor>black</lowerColor>
+            <upperColor>yellow</upperColor>
+            <lowerValue>0</lowerValue>
+            <lowerValue>50</lowerValue>
+            <lowerValue>100</lowerValue>
+            <lowerValue>150</lowerValue>
+            <lowerValue>200</lowerValue>
+            <lowerValue>250</lowerValue>
+            <lowerValue>300</lowerValue>
+            <lowerValue>350</lowerValue>
+            <lowerValue>400</lowerValue>
+            <lowerValue>450</lowerValue>
+            <lowerColor>yellow</lowerColor>
+            <upperColor>red</upperColor>
+            <lowerValue>500</lowerValue>
+            <lowerValue>550</lowerValue>
+            <lowerValue>600</lowerValue>
+            <lowerValue>650</lowerValue>
+            <lowerValue>700</lowerValue>
+            <lowerValue>750</lowerValue>
+            <lowerValue>800</lowerValue>
+            <lowerValue>850</lowerValue>
+            <lowerValue>900</lowerValue>
+            <lowerValue>950</lowerValue>
+            <lowerValue>1000</lowerValue>
+        </classBreaks>
+    </defaults>
+    <defaults>
+        <parameterGroupId>Evaporation</parameterGroupId>
+        <classBreaks>
+            <lowerColor>blue3</lowerColor>
+            <upperColor>light blue1</upperColor>
+            <lowerValue>-25</lowerValue>
+            <lowerValue>-10</lowerValue>
+            <lowerValue>-5</lowerValue>
+            <lowerValue>-0.5</lowerValue>
+            <lowerColor>pale green1</lowerColor>
+            <upperColor>red</upperColor>
+            <lowerValue>0.5</lowerValue>
+            <lowerValue>5</lowerValue>
+            <lowerValue>10</lowerValue>
+            <lowerValue>15</lowerValue>
+            <lowerValue>20</lowerValue>
+            <lowerValue>25</lowerValue>
+            <lowerValue>30</lowerValue>
+        </classBreaks>
+    </defaults>
+    <defaults>
+        <parameterGroupId>Discharge</parameterGroupId>
+        <classBreaks>
+            <lowerColor>antique white</lowerColor>
+            <upperColor>red</upperColor>
+            <lowerValue>1</lowerValue>
+            <lowerValue>5</lowerValue>
+            <lowerValue>10</lowerValue>
+            <lowerValue>20</lowerValue>
+            <lowerValue>50</lowerValue>
+            <lowerValue>100</lowerValue>
+            <lowerColor>red</lowerColor>
+            <upperColor>yellow</upperColor>
+            <lowerValue>200</lowerValue>
+            <lowerValue>300</lowerValue>
+            <lowerValue>400</lowerValue>
+            <lowerValue>500</lowerValue>
+            <lowerColor>yellow</lowerColor>
+            <upperColor>green</upperColor>
+            <lowerValue>600</lowerValue>
+            <lowerValue>700</lowerValue>
+            <lowerValue>800</lowerValue>
+            <lowerValue>900</lowerValue>
+            <lowerColor>green</lowerColor>
+            <upperColor>aquamarine</upperColor>
+            <lowerValue>1000</lowerValue>
+            <lowerValue>1500</lowerValue>
+            <lowerValue>2000</lowerValue>
+            <lowerColor>aquamarine</lowerColor>
+            <upperColor>blue</upperColor>
+            <lowerValue>3000</lowerValue>
+            <lowerValue>5000</lowerValue>
+            <lowerValue>7500</lowerValue>
+            <lowerValue>10000</lowerValue>
+        </classBreaks>
+    </defaults>
+    <gridPlotGroup id="icon-eu" name="icon-eu">
+        <gridPlot id="nwp_DWD_icon-eu_tp" name="Precipitation [mm]">
+            <timeSeriesSet>
+                <moduleInstanceId>import_nwp_DWD_icon-eu</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>tp</parameterId>
+                <locationId>icon-eu</locationId>
+                <timeSeriesType>external forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <readWriteMode>read complete forecast</readWriteMode>
+                <ensembleId>icon-eu</ensembleId>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="nwp_DWD_icon-eu_2t" name="Temperature (2m) [oC]">
+            <timeSeriesSet>
+                <moduleInstanceId>import_nwp_DWD_icon-eu</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>2t</parameterId>
+                <locationId>icon-eu</locationId>
+                <timeSeriesType>external forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <readWriteMode>read complete forecast</readWriteMode>
+                <ensembleId>icon-eu</ensembleId>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="nwp_DWD_icon-eu_E.ref.mak" name="PET (Makkink) [mm]">
+            <timeSeriesSet>
+                <moduleInstanceId>import_nwp_DWD_icon-eu</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>E.ref.mak</parameterId>
+                <locationId>icon-eu</locationId>
+                <timeSeriesType>external forecasting</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <readWriteMode>read complete forecast</readWriteMode>
+                <ensembleId>icon-eu</ensembleId>
+            </timeSeriesSet>
+        </gridPlot>
+    </gridPlotGroup>
+    <gridPlotGroup id="create_reanalysis_icon-eu" name="create_reanalysis_icon-eu">
+        <gridPlot id="create_reanalysis_DWD_icon-eu_tp" name="Precipitation [mm]">
+            <timeSeriesSet>
+                <moduleInstanceId>create_reanalysis_DWD_icon-eu</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>tp</parameterId>
+                <locationId>icon-eu</locationId>
+                <timeSeriesType>external historical</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <relativeViewPeriod unit="day" start="0" end="5" />
+                <readWriteMode>read only</readWriteMode>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="create_reanalysis_DWD_icon-eu_2t" name="Temperature (2m) [oC]">
+            <timeSeriesSet>
+                <moduleInstanceId>create_reanalysis_DWD_icon-eu</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>2t</parameterId>
+                <locationId>icon-eu</locationId>
+                <timeSeriesType>external historical</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <relativeViewPeriod unit="day" start="0" end="5" />
+                <readWriteMode>read only</readWriteMode>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="create_reanalysis_DWD_icon-eu_E.ref.mak" name="PET (Makkink) [mm]">
+            <timeSeriesSet>
+                <moduleInstanceId>create_reanalysis_DWD_icon-eu</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>E.ref.mak</parameterId>
+                <locationId>icon-eu</locationId>
+                <timeSeriesType>external historical</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <relativeViewPeriod unit="day" start="0" end="5" />
+                <readWriteMode>read only</readWriteMode>
+            </timeSeriesSet>
+        </gridPlot>
+    </gridPlotGroup>
+    <gridPlotGroup id="era5" name="era5">
+        <gridPlot id="reanalysis_ECMWF_era5_tp" name="Precipitation [mm]">
+            <timeSeriesSet>
+                <moduleInstanceId>import_reanalysis_ECMWF_era5</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>tp</parameterId>
+                <locationId>era5</locationId>
+                <timeSeriesType>external historical</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <relativeViewPeriod unit="day" start="-7" end="-4" />
+                <readWriteMode>read only</readWriteMode>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="reanalysis_ECMWF_era5_2t" name="Temperature (2m) [oC]">
+            <timeSeriesSet>
+                <moduleInstanceId>import_reanalysis_ECMWF_era5</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>2t</parameterId>
+                <locationId>era5</locationId>
+                <timeSeriesType>external historical</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <relativeViewPeriod unit="day" start="-7" end="-4" />
+                <readWriteMode>read only</readWriteMode>
+            </timeSeriesSet>
+        </gridPlot>
+        <gridPlot id="reanalysis_ECMWF_era5_E.ref.mak" name="PET (Makkink) [mm]">
+            <timeSeriesSet>
+                <moduleInstanceId>import_reanalysis_ECMWF_era5</moduleInstanceId>
+                <valueType>grid</valueType>
+                <parameterId>E.ref.mak</parameterId>
+                <locationId>era5</locationId>
+                <timeSeriesType>external historical</timeSeriesType>
+                <timeStep unit="hour" multiplier="1" />
+                <relativeViewPeriod unit="day" start="-7" end="-4" />
+                <readWriteMode>read only</readWriteMode>
+            </timeSeriesSet>
+        </gridPlot>
+    </gridPlotGroup>
+    <gridPlotGroup id="wflow_ebro_20200428" name="wflow_ebro_20200428">
+        <gridPlotGroup id="wflow_ebro_20200428_update_icon-eu" name="wflow_ebro_20200428_update_icon-eu">
+            <gridPlot id="update_icon-eu_tp_single" name="Precipitation [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_2t_single" name="Temperature (2m) [oC] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_E.ref.mak_single" name="PET (Makkink) [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_Q.simulated_single" name="Discharge [m3/s] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200428_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200428_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+        </gridPlotGroup>
+        <gridPlotGroup id="wflow_ebro_20200428_forecast_icon-eu_icon-eu" name="wflow_ebro_20200428_forecast_icon-eu_icon-eu">
+            <gridPlot id="forecast_icon-eu_icon-eu_tp_single" name="Precipitation [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200428_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_2t_single" name="Temperature (2m) [oC] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200428_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_E.ref.mak_single" name="PET (Makkink) [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200428_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200428_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_Q.simulated_single" name="Discharge [m3/s] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200428_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200428_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200428_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200428</locationId>
+                    <timeSeriesType>simulated forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+        </gridPlotGroup>
+    </gridPlotGroup>
+    <gridPlotGroup id="wflow_ebro_20200617" name="wflow_ebro_20200617">
+        <gridPlotGroup id="wflow_ebro_20200617_update_icon-eu" name="wflow_ebro_20200617_update_icon-eu">
+            <gridPlot id="update_icon-eu_tp_single" name="Precipitation [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_2t_single" name="Temperature (2m) [oC] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_E.ref.mak_single" name="PET (Makkink) [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_Q.simulated_single" name="Discharge [m3/s] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200617_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200617_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+        </gridPlotGroup>
+        <gridPlotGroup id="wflow_ebro_20200617_forecast_icon-eu_icon-eu" name="wflow_ebro_20200617_forecast_icon-eu_icon-eu">
+            <gridPlot id="forecast_icon-eu_icon-eu_tp_single" name="Precipitation [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200617_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_2t_single" name="Temperature (2m) [oC] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200617_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_E.ref.mak_single" name="PET (Makkink) [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_ebro_20200617_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200617_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_Q.simulated_single" name="Discharge [m3/s] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200617_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200617_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_ebro_20200617_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_ebro_20200617</locationId>
+                    <timeSeriesType>simulated forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+        </gridPlotGroup>
+    </gridPlotGroup>
+    <gridPlotGroup id="wflow_meuse_20200319" name="wflow_meuse_20200319">
+        <gridPlotGroup id="wflow_meuse_20200319_update_icon-eu" name="wflow_meuse_20200319_update_icon-eu">
+            <gridPlot id="update_icon-eu_tp_single" name="Precipitation [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_2t_single" name="Temperature (2m) [oC] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_E.ref.mak_single" name="PET (Makkink) [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="update_icon-eu_Q.simulated_single" name="Discharge [m3/s] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_meuse_20200319_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_meuse_20200319_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+            </gridPlot>
+        </gridPlotGroup>
+        <gridPlotGroup id="wflow_meuse_20200319_forecast_icon-eu_icon-eu" name="wflow_meuse_20200319_forecast_icon-eu_icon-eu">
+            <gridPlot id="forecast_icon-eu_icon-eu_tp_single" name="Precipitation [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_meuse_20200319_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>tp</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_2t_single" name="Temperature (2m) [oC] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_meuse_20200319_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>2t</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_E.ref.mak_single" name="PET (Makkink) [mm] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>preprocess_wflow_meuse_20200319_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_meuse_20200319_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>E.ref.mak</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>external forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+            <gridPlot id="forecast_icon-eu_icon-eu_Q.simulated_single" name="Discharge [m3/s] single">
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_meuse_20200319_update_era5</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-7" end="-4" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_meuse_20200319_update_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>simulated historical</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <relativeViewPeriod unit="day" start="-4" end="0" />
+                    <readWriteMode>read only</readWriteMode>
+                </timeSeriesSet>
+                <timeSeriesSet>
+                    <moduleInstanceId>wflow_meuse_20200319_forecast_icon-eu_icon-eu</moduleInstanceId>
+                    <valueType>grid</valueType>
+                    <parameterId>Q.simulated</parameterId>
+                    <locationId>wflow_meuse_20200319</locationId>
+                    <timeSeriesType>simulated forecasting</timeSeriesType>
+                    <timeStep unit="hour" multiplier="6" />
+                    <readWriteMode>read complete forecast</readWriteMode>
+                    <ensembleId>icon-eu</ensembleId>
+                </timeSeriesSet>
+            </gridPlot>
+        </gridPlotGroup>
+    </gridPlotGroup>
+</gridDisplay>

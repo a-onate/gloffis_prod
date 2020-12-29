@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
+    <moduleInstanceDescriptor id="wflow_ebro_20200428" />
+    <moduleInstanceDescriptor id="preprocess_wflow_ebro_20200428_update_era5" />
+    <moduleInstanceDescriptor id="wflow_ebro_20200428_update_era5" />
+    <moduleInstanceDescriptor id="wflow_ebro_20200617" />
+    <moduleInstanceDescriptor id="preprocess_wflow_ebro_20200617_update_era5" />
+    <moduleInstanceDescriptor id="wflow_ebro_20200617_update_era5" />
+    <moduleInstanceDescriptor id="wflow_meuse_20200319" />
+    <moduleInstanceDescriptor id="preprocess_wflow_meuse_20200319_update_era5" />
+    <moduleInstanceDescriptor id="wflow_meuse_20200319_update_era5" />
+    <moduleInstanceDescriptor id="preprocess_wflow_ebro_20200428_update_icon-eu" />
+    <moduleInstanceDescriptor id="wflow_ebro_20200428_update_icon-eu" />
+    <moduleInstanceDescriptor id="preprocess_wflow_ebro_20200428_forecast_icon-eu_icon-eu" />
+    <moduleInstanceDescriptor id="wflow_ebro_20200428_forecast_icon-eu_icon-eu" />
+    <moduleInstanceDescriptor id="preprocess_wflow_ebro_20200617_update_icon-eu" />
+    <moduleInstanceDescriptor id="wflow_ebro_20200617_update_icon-eu" />
+    <moduleInstanceDescriptor id="preprocess_wflow_ebro_20200617_forecast_icon-eu_icon-eu" />
+    <moduleInstanceDescriptor id="wflow_ebro_20200617_forecast_icon-eu_icon-eu" />
+    <moduleInstanceDescriptor id="preprocess_wflow_meuse_20200319_update_icon-eu" />
+    <moduleInstanceDescriptor id="wflow_meuse_20200319_update_icon-eu" />
+    <moduleInstanceDescriptor id="preprocess_wflow_meuse_20200319_forecast_icon-eu_icon-eu" />
+    <moduleInstanceDescriptor id="wflow_meuse_20200319_forecast_icon-eu_icon-eu" />
+</moduleInstanceDescriptors>
