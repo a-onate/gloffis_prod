@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<rootDir>%REGION_HOME%/Modules/wflow</rootDir>
+		<workDir>%ROOT_DIR%/$_WFLOW_MODEL$/</workDir>
+		<exportDir>%WORK_DIR%</exportDir>
+		<exportDataSetDir>%WORK_DIR%</exportDataSetDir>
+		<exportIdMap>IdExportWFLOW</exportIdMap>
+		<importDir>%WORK_DIR%/run_default/outmaps</importDir>
+		<importIdMap>IdImportWFLOW</importIdMap>
+		<dumpFileDir>%REGION_HOME%/Modules/dump_files</dumpFileDir>
+		<dumpDir>%WORK_DIR%</dumpDir>
+		<diagnosticFile>%WORK_DIR%/wflow_diag.xml</diagnosticFile>
+		<missVal>-999.0</missVal>
+		<convertDatum>true</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			
+		<purgeActivity>
+				<filter>%WORK_DIR%\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\instate\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\intbl\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\outstate\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\staticmaps\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\run_default\outmaps\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\run_default\outstate\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\run_default\outsum\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\run_default\*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>$_WARM_STATE_MODULE_INSTANCE$</moduleInstanceId>
+				<stateExportDir>%WORK_DIR%/instate</stateExportDir>
+				<stateConfigFile>%WORK_DIR%/instate/state.xml</stateConfigFile>
+				<stateLocations type="file">
+					<stateLocation>
+						<readLocation>CanopyStorage.map</readLocation>
+						<writeLocation>../run_default/outstate/CanopyStorage.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>LandRunoff.map</readLocation>
+						<writeLocation>../run_default/outstate/LandRunoff.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>ReservoirVolume.map</readLocation>
+						<writeLocation>../run_default/outstate/ReservoirVolume.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>RiverRunoff.map</readLocation>
+						<writeLocation>../run_default/outstate/RiverRunoff.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>SatWaterDepth.map</readLocation>
+						<writeLocation>../run_default/outstate/SatWaterDepth.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>Snow.map</readLocation>
+						<writeLocation>../run_default/outstate/Snow.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>SnowWater.map</readLocation>
+						<writeLocation>../run_default/outstate/SnowWater.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>SubsurfaceFlow.map</readLocation>
+						<writeLocation>../run_default/outstate/SubsurfaceFlow.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>TSoil.map</readLocation>
+						<writeLocation>../run_default/outstate/TSoil.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>UStoreLayerDepth_0.map</readLocation>
+						<writeLocation>../run_default/outstate/UStoreLayerDepth_0.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>UStoreLayerDepth_1.map</readLocation>
+						<writeLocation>../run_default/outstate/UStoreLayerDepth_1.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>UStoreLayerDepth_2.map</readLocation>
+						<writeLocation>../run_default/outstate/UStoreLayerDepth_2.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>UStoreLayerDepth_3.map</readLocation>
+						<writeLocation>../run_default/outstate/UStoreLayerDepth_3.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>WaterLevelL.map</readLocation>
+						<writeLocation>../run_default/outstate/WaterLevelL.map</writeLocation>
+					</stateLocation>
+					<stateLocation>
+						<readLocation>WaterLevelR.map</readLocation>
+						<writeLocation>../run_default/outstate/WaterLevelR.map</writeLocation>
+					</stateLocation>
+				</stateLocations>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod unit="day" start="$_WARM_STATE_START$" end="$_REL_VIEW_PERIOD_START$"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+						<exportDataSetActivity>
+				<moduleInstanceId>$_WFLOW_MODEL$</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportNetcdfActivity>
+				<exportFile>inmaps.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>preprocess_$_WFLOW_MODEL$_update_$_DATA_PROD$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>tp</parameterId>
+						<locationId>$_WFLOW_MODEL$</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+						<relativeViewPeriod unit="day" start="$_REL_VIEW_PERIOD_START$" end="$_REL_VIEW_PERIOD_END$" />
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>preprocess_$_WFLOW_MODEL$_update_$_DATA_PROD$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>2t</parameterId>
+						<locationId>$_WFLOW_MODEL$</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+						<relativeViewPeriod unit="day" start="$_REL_VIEW_PERIOD_START$" end="$_REL_VIEW_PERIOD_END$" />
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>preprocess_$_WFLOW_MODEL$_update_$_DATA_PROD$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>E.ref.mak</parameterId>
+						<locationId>$_WFLOW_MODEL$</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+						<relativeViewPeriod unit="day" start="$_REL_VIEW_PERIOD_START$" end="$_REL_VIEW_PERIOD_END$" />
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%/runinfo.xml</exportFile>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>Run wflow</description>
+				<command>
+					<executable>wflow-$_WFLOW_BUNDLE$-bundle\wflow_sbm.exe</executable>
+				</command>
+				<arguments>
+					<argument>-C</argument>
+					<argument>.</argument>
+					<argument>-f</argument>
+				</arguments>
+				
+			<!--2 hours-->
+			
+				<timeOut>7200000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+			<executeActivity>
+				<description>Run wflow post</description>
+				<command>
+					<executable>wflow-$_WFLOW_BUNDLE$-bundle\wflow_adapt.exe</executable>
+				</command>
+				<arguments>
+					<argument>-M</argument>
+					<argument>Post</argument>
+					<argument>-s</argument>
+					<argument>instate/state.xml</argument>
+					<argument>-o</argument>
+					<argument>outstate/outstate.xml</argument>
+					<argument>-r</argument>
+					<argument>runinfo.xml</argument>
+					<argument>-w</argument>
+					<argument>./</argument>
+					<argument>-C</argument>
+					<argument>.</argument>
+					<argument>-I</argument>
+					<argument>wflow_sbm.ini</argument>
+				</arguments>
+				
+			<!--10 minutes-->
+			
+				<timeOut>600000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+		<importActivities>
+			<importStateActivity>
+				<stateConfigFile>%WORK_DIR%/outstate/outstate.xml</stateConfigFile>
+			</importStateActivity>
+			<!--<importTimeSeriesActivity>
+				<importFile>%WORK_DIR%/run_default/run.tss.xml</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Q.uh</parameterId>
+						<locationSetId>$OUTPUT_LOCATION_ID$</locationSetId>
+						<timeSeriesType>$OUTPUT_TYPE$</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importTimeSeriesActivity>-->
+			<importNetcdfActivity>
+				<importFile>%WORK_DIR%/run_default/outmaps.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$_WFLOW_MODEL$_update_$_DATA_PROD$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Q.simulated</parameterId>
+						<locationId>$_WFLOW_MODEL$</locationId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+						<readWriteMode>add originals</readWriteMode>
+						<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>

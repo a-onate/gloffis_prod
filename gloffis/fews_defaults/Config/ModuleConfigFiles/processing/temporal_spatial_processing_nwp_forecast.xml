@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>nwp_tp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_FCST_PROD_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>tp</parameterId>
+			<locationId>$_FCST_PROD$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_FCST_PROD_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+	<variableId>nwp_at_wflow_temp_res_tp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>preprocess_$_WFLOW_MODEL$_forecast_$_OBS_PROD$_$_FCST_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>tp</parameterId>
+			<locationId>$_FCST_PROD$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>nwp_at_wflow_temp_res_and_spatial_res_tp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>preprocess_$_WFLOW_MODEL$_forecast_$_OBS_PROD$_$_FCST_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>tp</parameterId>
+			<locationId>$_WFLOW_MODEL$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>nwp_2t</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_FCST_PROD_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>2t</parameterId>
+			<locationId>$_FCST_PROD$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_FCST_PROD_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+	<variableId>nwp_at_wflow_temp_res_2t</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>preprocess_$_WFLOW_MODEL$_forecast_$_OBS_PROD$_$_FCST_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>2t</parameterId>
+			<locationId>$_FCST_PROD$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>nwp_at_wflow_temp_res_and_spatial_res_2t</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>preprocess_$_WFLOW_MODEL$_forecast_$_OBS_PROD$_$_FCST_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>2t</parameterId>
+			<locationId>$_WFLOW_MODEL$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>nwp_E.ref.mak</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_FCST_PROD_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>E.ref.mak</parameterId>
+			<locationId>$_FCST_PROD$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_FCST_PROD_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+	<variableId>nwp_at_wflow_temp_res_E.ref.mak</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>preprocess_$_WFLOW_MODEL$_forecast_$_OBS_PROD$_$_FCST_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>E.ref.mak</parameterId>
+			<locationId>$_FCST_PROD$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>nwp_at_wflow_temp_res_and_spatial_res_E.ref.mak</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>preprocess_$_WFLOW_MODEL$_forecast_$_OBS_PROD$_$_FCST_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>E.ref.mak</parameterId>
+			<locationId>$_WFLOW_MODEL$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_WFLOW_MODEL_TEMPORAL_RES$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="temporal_aggregation_tp">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>nwp_tp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>nwp_at_wflow_temp_res_tp</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="temporal_aggregation_2t">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>nwp_2t</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>nwp_at_wflow_temp_res_2t</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="temporal_aggregation_E.ref.mak">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>nwp_E.ref.mak</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>nwp_at_wflow_temp_res_E.ref.mak</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="spatial_resampling_tp">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>nwp_at_wflow_temp_res_tp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>nwp_at_wflow_temp_res_and_spatial_res_tp</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="spatial_resampling_2t">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>nwp_at_wflow_temp_res_2t</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>nwp_at_wflow_temp_res_and_spatial_res_2t</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="spatial_resampling_E.ref.mak">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>nwp_at_wflow_temp_res_E.ref.mak</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>nwp_at_wflow_temp_res_and_spatial_res_E.ref.mak</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>import_radiation</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>import_nwp</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$_NWP$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$_NWP$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>import_radiation_nonegatives</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>import_nwp</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$_NWP$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$_NWP$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="Remove_negative_values">
+		<user>
+			<simple>
+				<expression>max(import_radiation,0)</expression>
+				<outputVariable>
+					<variableId>import_radiation_nonegatives</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

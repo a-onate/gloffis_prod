@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>forecast_tp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>import_nwp_$_PROVIDER$_$_NWP_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>tp</parameterId>
+			<locationId>$_NWP_PROD$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_TEMPORAL_RES$"/>
+			<relativeViewPeriod unit="day" start="0" end="5"/>
+			<readWriteMode>read only</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_NWP_PROD$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>reanalysis_tp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>create_reanalysis_$_PROVIDER$_$_NWP_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>tp</parameterId>
+			<locationId>$_NWP_PROD$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_TEMPORAL_RES$"/>
+			<relativeViewPeriod unit="day" start="0" end="5"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>forecast_2t</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>import_nwp_$_PROVIDER$_$_NWP_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>2t</parameterId>
+			<locationId>$_NWP_PROD$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_TEMPORAL_RES$"/>
+			<relativeViewPeriod unit="day" start="0" end="5"/>
+			<readWriteMode>read only</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_NWP_PROD$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>reanalysis_2t</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>create_reanalysis_$_PROVIDER$_$_NWP_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>2t</parameterId>
+			<locationId>$_NWP_PROD$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_TEMPORAL_RES$"/>
+			<relativeViewPeriod unit="day" start="0" end="5"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>forecast_E.ref.mak</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>import_nwp_$_PROVIDER$_$_NWP_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>E.ref.mak</parameterId>
+			<locationId>$_NWP_PROD$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_TEMPORAL_RES$"/>
+			<relativeViewPeriod unit="day" start="0" end="5"/>
+			<readWriteMode>read only</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_NWP_PROD$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>reanalysis_E.ref.mak</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>create_reanalysis_$_PROVIDER$_$_NWP_PROD$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>E.ref.mak</parameterId>
+			<locationId>$_NWP_PROD$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_TEMPORAL_RES$"/>
+			<relativeViewPeriod unit="day" start="0" end="5"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="create_reanalysis_tp">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>forecast_tp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>reanalysis_tp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>reanalysis_tp</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="create_reanalysis_2t">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>forecast_2t</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>reanalysis_2t</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>reanalysis_2t</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="create_reanalysis_E.ref.mak">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>forecast_E.ref.mak</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>reanalysis_E.ref.mak</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>reanalysis_E.ref.mak</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+</transformationModule>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.10</piVersion>
+		<rootDir>$MODULES_FOLDER$/cp</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<importDir>%ROOT_DIR%</importDir>
+		<dumpFileDir>$DUMP_FILE_FOLDER$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/diag.xml</diagnosticFile>
+		<time0Format>yyyyMMddHH</time0Format>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportDataSetActivity>
+				<moduleInstanceId>copy_to_importfolder</moduleInstanceId>
+			</exportDataSetActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>Run 'copy to import folder' script to copy data from network location to local import folder</description>
+				<command>
+					<executable>copy_to_importfolder.$EXT$</executable>
+				</command>
+				<arguments>
+					<argument>$NETWORK_BACKUP_FOLDER$/$_NWP$</argument>
+					<argument>$IMPORT_FOLDER$/$_NWP$</argument>
+					<argument>%TIME0%</argument>
+				</arguments>
+				<timeOut>600000</timeOut>
+				<ignoreDiagnostics>false</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

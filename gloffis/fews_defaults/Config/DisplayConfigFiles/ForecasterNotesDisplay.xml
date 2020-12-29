@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forecasterNotesDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/forecasterNotesDisplay.xsd">
+	<title>Forecaster Notes</title>
+	<msgTemplate id="Message">
+		<message/>
+	</msgTemplate>
+	<eventCode id="Clonmel 16011"/>
+	<eventCode id="Fourmilewater 16012"/>
+</forecasterNotesDisplay>

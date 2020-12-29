@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.10</piVersion>
+		<rootDir>$REGION_HOME$/modules/wget/</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<importDir>%ROOT_DIR%</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/diag.xml</diagnosticFile>
+		<time0Format>yyyyMMddHH</time0Format>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportDataSetActivity>
+				<moduleInstanceId>download_icon_linux_template</moduleInstanceId>
+			</exportDataSetActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>Run wget download script to download DWD ICON EU data</description>
+				<command>
+					<executable>./download-opendata.dwd.de.sh</executable>
+				</command>
+				<arguments>
+					<argument>$product$</argument>
+					<argument>$url_parameter$</argument>
+					<argument>$coverage$</argument>
+					<argument>$grid_type$</argument>
+					<argument>$level$</argument>
+					<argument>%TIME0%</argument>
+					<argument>$filename_parameter$</argument>
+					<argument>$IMPORT_FOLDER$/$NWP_product$/$url_parameter$</argument>
+				</arguments>
+				<timeOut>600000</timeOut>
+				<ignoreDiagnostics>false</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

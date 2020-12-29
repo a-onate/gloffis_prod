@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systemMonitorDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/systemMonitorDisplay.xsd">
+	<description>Configuration of the import status tab of the system monitor</description>
+	<importStatus>
+		<tabName>Import Status</tabName>
+		<defaultTimeThreshold>
+			<timeThreshold>
+				<periodLength value="0" unit="hour"/>
+				<!--green-->
+				<color>D0F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="90" unit="minute"/>
+				<!--yellow-->
+				<color>F2F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="105" unit="minute"/>
+				<!--orange-->
+				<color>F5DA81</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="2" unit="hour"/>
+				<!--red-->
+				<color>F79F81</color>
+			</timeThreshold>
+		</defaultTimeThreshold>
+		<extraTimeThreshold>
+			<dataFeedId>icon</dataFeedId>
+			<timeThreshold>
+				<periodLength value="0" unit="hour"/>
+				<!--green-->
+				<color>D0F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="6" unit="hour"/>
+				<!--yellow-->
+				<color>F2F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="12" unit="hour"/>
+				<!--orange-->
+				<color>F5DA81</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="24" unit="hour"/>
+				<!--red-->
+				<color>F79F81</color>
+			</timeThreshold>
+		</extraTimeThreshold>
+		<extraTimeThreshold>
+			<dataFeedId>icon</dataFeedId>
+			<timeThreshold>
+				<periodLength value="0" unit="hour"/>
+				<!--green-->
+				<color>D0F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="6" unit="hour"/>
+				<!--yellow-->
+				<color>F2F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="12" unit="hour"/>
+				<!--orange-->
+				<color>F5DA81</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="24" unit="hour"/>
+				<!--red-->
+				<color>F79F81</color>
+			</timeThreshold>
+		</extraTimeThreshold>
+		<extraTimeThreshold>
+			<dataFeedId>icon-eu</dataFeedId>
+			<timeThreshold>
+				<periodLength value="0" unit="hour"/>
+				<!--green-->
+				<color>D0F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="3" unit="hour"/>
+				<!--yellow-->
+				<color>F2F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="6" unit="hour"/>
+				<!--orange-->
+				<color>F5DA81</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="12" unit="hour"/>
+				<!--red-->
+				<color>F79F81</color>
+			</timeThreshold>
+		</extraTimeThreshold>
+		<extraTimeThreshold>
+			<dataFeedId>icon-eu-eps</dataFeedId>
+			<timeThreshold>
+				<periodLength value="0" unit="hour"/>
+				<!--green-->
+				<color>D0F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="6" unit="hour"/>
+				<!--yellow-->
+				<color>F2F5A9</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="12" unit="hour"/>
+				<!--orange-->
+				<color>F5DA81</color>
+			</timeThreshold>
+			<timeThreshold>
+				<periodLength value="24" unit="hour"/>
+				<!--red-->
+				<color>F79F81</color>
+			</timeThreshold>
+		</extraTimeThreshold>
+	</importStatus>
+</systemMonitorDisplay>

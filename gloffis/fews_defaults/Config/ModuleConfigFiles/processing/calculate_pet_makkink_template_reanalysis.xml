@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!--
+			# berekeningswijze referentie-gewasverdamping volgens Makkink (Er) volgens KNMI:
+			gamma=0.646+0.0006*Temp; 				#psychrometer constante (hPa/C)
+			labda=1000*(2501-2.38*Temp);				#verdampingswarmte water (J/kg)
+			rho_w=1000;						#soortelijke massa water (kg/m3)
+			es=6.107*10**((7.5*Temp)/(237.3+Temp));			#verzadigde dampingspanning tov water (C)
+			#es=6.107*exp((7.5*Temp)/(237.3+Temp));			#verzadigde dampingspanning tov water (C)
+			Slope=((7.5*237.3)/((237.3+Temp)**2))*ln(10)*es;	#verzadigde dampspanningsgradient tov water (hPa/C)
+			Eref=1000*0.65*(Slope/(Slope+gamma))*(Rs/(rho_w*labda));	#Referentie gewasverdamping (mm/etmaal) Rs in J/m2. Input for this workflow: W/m2
+-->
+	<variable>
+		<variableId>Rs</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_REANALYSIS_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>ssrd</parameterId>
+			<locationId>$_REANALYSIS_PROD$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_REANALYSIS_TEMPORAL_RESOLUTION$"/>
+			<relativeViewPeriod unit="day" start="$_REL_VIEW_PERIOD_START$" end="$_REL_VIEW_PERIOD_END$"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_REANALYSIS_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>2t</parameterId>
+			<locationId>$_REANALYSIS_PROD$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_REANALYSIS_TEMPORAL_RESOLUTION$"/>
+			<relativeViewPeriod unit="day" start="$_REL_VIEW_PERIOD_START$" end="$_REL_VIEW_PERIOD_END$"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Slope</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_REANALYSIS_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>vp</parameterId>
+			<locationId>$_REANALYSIS_PROD$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_REANALYSIS_TEMPORAL_RESOLUTION$"/>
+			<relativeViewPeriod unit="day" start="$_REL_VIEW_PERIOD_START$" end="$_REL_VIEW_PERIOD_END$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Eref</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_REANALYSIS_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>E.ref.mak</parameterId>
+			<locationId>$_REANALYSIS_PROD$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_REANALYSIS_TEMPORAL_RESOLUTION$"/>
+			<relativeViewPeriod unit="day" start="$_REL_VIEW_PERIOD_START$" end="$_REL_VIEW_PERIOD_END$"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+	</variable>
+	<!-- es=6.107*10**((7.5*Temp)/(237.3+Temp));			#verzadigde dampingspanning tov water (C) -->
+	<!--Slope=((7.5*237.3)/((237.3+Temp)**2))*ln(10)*es;	#verzadigde dampspanningsgradient tov water (hPa/C)-->
+	<transformation id="compute_Slope">
+		<user>
+			<simple>
+				<expression>((7.5*237.3)/((237.3+Temp)^2))*ln(10)*(6.107*10^((7.5*Temp)/(237.3+Temp)))</expression>
+				<outputVariable>
+					<variableId>Slope</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<!-- gamma=0.646+0.0006*Temp; 				#psychrometer constante (hPa/C) -->
+	<!-- labda=1000*(2501-2.38*Temp);				#verdampingswarmte water (J/kg) -->
+	<!-- rho_w=1000;										#soortelijke massa water (kg/m3) -->
+	<!-- Eref=1000*0.65*(Slope/(Slope+gamma))*(Rs/(rho_w*labda));	#Referentie gewasverdamping (mm/uur). Rs in W/m2; for 1h timestep W/m2 = J/s/m2 * 3600s-->
+	<transformation id="compute_Eref">
+		<user>
+			<simple>
+				<expression>1000*0.65*(Slope/(Slope+(0.646+0.0006*Temp)))*(3600*Rs/(1000*(1000*(2501-2.38*Temp))))</expression>
+				<outputVariable>
+					<variableId>Eref</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

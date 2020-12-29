@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chartLayer xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/chartLayer.xsd" version="1.0">
+	<refreshInterval unit="second" multiplier="30"/>
+	<chartFormat id="chartFormat_URBS">
+		<includeTime0>true</includeTime0>
+		<includeLegend>false</includeLegend>
+		<thresholdAxisScaling>two thresholds</thresholdAxisScaling>
+		<bottomAxis>
+			<format>d/M</format>
+			<tickUnit unit="day" multiplier="1"/>
+			<minorTickUnit unit="hour" multiplier="4"/>
+			<centerLabelsBetweenTicks>false</centerLabelsBetweenTicks>
+		</bottomAxis>
+		<backgroundColor>white</backgroundColor>
+		<backgroundOpaquenessPercentage>60</backgroundOpaquenessPercentage>
+	</chartFormat>
+	<chart id="Clonmel" formatId="chartFormat_URBS" width="300" height="250">
+		<timeSeries preferredColor="orange" lineStyle="dashed;thick" markerStyle="none" axis="left">Q_simulated</timeSeries>
+		<timeSeries preferredColor="black" lineStyle="solid;thick" markerStyle="none" axis="left">Q_rated</timeSeries>
+		<timeSeries preferredColor="red" lineStyle="solid;thick" markerStyle="none" axis="left">Q_forecast</timeSeries>
+		<locationId>16011</locationId>
+		<xOffSetPixels>100</xOffSetPixels>
+		<yOffSetPixels>-150</yOffSetPixels>
+		<inputVariable variableId="Q_simulated" variableType="any">
+			<timeSeriesSet>
+			<moduleInstanceId>suir_clonmel_URBS_Update</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.simulated</parameterId>
+			<locationId>16011</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-5" end="3"></relativeViewPeriod>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		</inputVariable>
+		<inputVariable variableId="Q_rated" variableType="any">
+			<timeSeriesSet>
+			<moduleInstanceId>LevelToFlow</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.rated</parameterId>
+			<locationId>16011</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-5" end="3"></relativeViewPeriod>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		</inputVariable>
+		<inputVariable variableId="Q_forecast" variableType="any">
+			<timeSeriesSet>
+			<moduleInstanceId>suir_clonmel_URBS_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.forecast</parameterId>
+			<locationId>16011</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-5" end="3"></relativeViewPeriod>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		</inputVariable>
+		<filterId>Chart_URBS_Clonmel</filterId>
+	</chart>
+</chartLayer>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Calculate global surface shortwave radiation downwards for icon. This involves summing the contributions for direct and diffuse radiation, and disaggregating the field from an average [0, t] to averages [t-1, t]-->
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!--INPUT-->
+	<variable>
+		<variableId>ssrd_dif_acc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_NWP_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>ssrd_dif_acc</parameterId>
+			<locationId>$_NWP$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_PRODUCT_TEMPORAL_RESOLUTION$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_NWP$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>ssrd_dir_acc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_NWP_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>ssrd_dir_acc</parameterId>
+			<locationId>$_NWP$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_PRODUCT_TEMPORAL_RESOLUTION$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_NWP$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--OUTPUT-->
+	<variable>
+		<variableId>ssrd</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$_NWP_MODULE_INSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>ssrd</parameterId>
+			<locationId>$_NWP$</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="$_NWP_PRODUCT_TEMPORAL_RESOLUTION$"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="hour" multiplier="$_EXPIRY_TIME$"/>
+			<ensembleId>$_NWP$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="add">
+		<user>
+			<simple>
+				<expression>ssrd_dif_acc+ssrd_dir_acc</expression>
+				<outputVariable>
+					<variableId>ssrd</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

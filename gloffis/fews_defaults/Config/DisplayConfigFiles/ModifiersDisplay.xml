@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modifierDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/modifierDisplay.xsd">
+	<!--<createModifierButtons>
+		<modifierId>SelectHydrographExtrapolation-Killardry</modifierId>
+		<modifierId>SelectHydrographExtrapolation-NewBridge</modifierId>
+		<modifierId>SelectHydrographExtrapolation-CahirPark</modifierId>
+		<modifierId>SelectHydrographExtrapolation-TarBridge</modifierId>
+		<modifierId>SelectHydrographExtrapolation-Fourmilewater</modifierId>
+		<modifierId>ModifyHydrographExtrapolation-Killardry</modifierId>
+		<modifierId>ModifyHydrographExtrapolation-NewBridge</modifierId>
+		<modifierId>ModifyHydrographExtrapolation-CahirPark</modifierId>
+		<modifierId>ModifyHydrographExtrapolation-TarBridge</modifierId>
+		<modifierId>ModifyHydrographExtrapolation-Fourmilewater</modifierId>
+	</createModifierButtons>-->
+	<showReRunButton>true</showReRunButton>
+	<timeSeriesModifiersDisplayConfig>
+		<showTimeShiftModifierButtons>false</showTimeShiftModifierButtons>
+		<showTablePanel>true</showTablePanel>
+		<defaultOperationType>Timeseries</defaultOperationType>
+	</timeSeriesModifiersDisplayConfig>
+</modifierDisplay>
