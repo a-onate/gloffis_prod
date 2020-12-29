@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<userGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/userGroups.xsd">
+	<userGroup id="linux_users">
+		<user id="jan"/>
+	</userGroup>
+	<userGroup id="windows_users">
+		<user id="verkade"/>
+		<user id="toom"/>
+	</userGroup>
+</userGroups>

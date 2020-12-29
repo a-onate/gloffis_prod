@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/permissions.xsd">
+	<permission id="admin">
+		<userGroup id="windows_users"/>
+		<userGroup id="linux_users"/>
+	</permission>
+	<permission id="windows_users">
+		<userGroup id="windows_users"/>
+	</permission>
+	<permission id="linux_users">
+		<userGroup id="linux_users"/>
+	</permission>
+</permissions>

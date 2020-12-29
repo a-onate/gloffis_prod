@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<timeSeriesDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesDisplay.xsd" version="1.0">
+	<defaultViewPeriod unit="hour" start="-24" end="24"/>
+	<timeMarkersDisplayConfig>
+		<timeMarkerDisplayOptions marker="systemTime">
+			<color>green</color>
+			<lineStyle>solid</lineStyle>
+			<label>System Time</label>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="timeZero">
+			<color>gray</color>
+			<lineStyle>dotted</lineStyle>
+			<label>Time Zero</label>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="displayTime">
+			<color>red</color>
+			<lineStyle>solid</lineStyle>
+			<label>Display Time</label>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="threshold">
+			<color>orange</color>
+			<lineStyle>dashed</lineStyle>
+			<label>Threshold</label>
+		</timeMarkerDisplayOptions>
+	</timeMarkersDisplayConfig>
+	<parametersDisplayConfig>
+		<parameterDisplayOptions id="H.obs">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>circle</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="H.rated">
+			<preferredColor>dark olive green4</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>circle</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="H.updated">
+			<preferredColor>orange</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>circle</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="H.routed">
+			<preferredColor>orange</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2.5</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>3</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="Q.rated">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2.5</lineWidth>
+			<markerStyle>circle</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>3</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="Q.updated">
+			<preferredColor>orange</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2.5</lineWidth>
+			<markerStyle>circle</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="Q.merged">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2.5</lineWidth>
+			<markerStyle>circle</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="Q.routed">
+			<preferredColor>orange</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2.5</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>3</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="Q.error">
+			<preferredColor>orange</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<lineWidth>2.5</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<precision>3</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.obs">
+			<preferredColor>black</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.forecast">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.forecast.sb">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.forecast.mb">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.int">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.catchment">
+			<preferredColor>turquoise</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="P.nwp.forecast">
+			<preferredColor>sandy brown</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="SwitchOff">
+			<preferredColor>orange</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<max>1</max>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="GR.forecast">
+			<preferredColor>black</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<lineWidth>2</lineWidth>
+			<markerStyle>none</markerStyle>
+			<markerSize>3</markerSize>
+			<min>0</min>
+			<precision>2</precision>
+		</parameterDisplayOptions>
+	</parametersDisplayConfig>
+	<statisticalFunctions>
+		<statisticalFunction function="calendarAggregation">
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="cumulative"/>
+		<statisticalFunction function="accumulationInterval">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+		</statisticalFunction>
+	</statisticalFunctions>
+</timeSeriesDisplay>

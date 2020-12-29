@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<explorer version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/explorer.xsd">
+	<systemInformation>
+		<systemCaption>$APPLICATION_NAME$</systemCaption>
+		<appendVersionInformationToSystemCaption>false</appendVersionInformationToSystemCaption>
+		<systemHelpUrl>http://publicwiki.deltares.nl/display/FEWSDOC/Delft-FEWS+User+Guide</systemHelpUrl>
+	</systemInformation>
+	<!--rollingbarrel only for Stand Alone application-->
+	<rollingBarrelOptions>
+		<type>interval</type>
+		<interval unit="hour"/>
+	</rollingBarrelOptions>
+	<globalDatum>mAOD</globalDatum>
+	<map>
+		<geoDatum>WGS 1984</geoDatum>
+		<projection>mercator</projection>
+		<defaultExtent id="globe" name="world">
+			<left>-180</left>
+			<right>180</right>
+			<top>90</top>
+			<bottom>-90</bottom>
+		</defaultExtent>
+		<extraExtent id="nl" name="The Netherlands">
+			<left>3.3</left>
+			<right>7.3</right>
+			<top>53.6</top>
+			<bottom>50.6</bottom>
+		</extraExtent>
+		<extraExtent id="europe" name="Europe">
+			<left>-15</left>
+			<right>35</right>
+			<top>70</top>
+			<bottom>35</bottom>
+		</extraExtent>
+		<scaleBarVisible>true</scaleBarVisible>
+		<northArrowVisible>true</northArrowVisible>
+		<labelsVisible>true</labelsVisible>
+		<backgroundColor>azure</backgroundColor>
+		<openStreetMapLayer id="osm_streets" name="Open Street Map (openstreetmap.org)">
+			<url>http://tile.openstreetmap.org</url>
+			<visible>false</visible>
+			<cacheDir>$mapLayersCacheDir$/osm</cacheDir>
+		</openStreetMapLayer>
+		<openStreetMapLayer id="osm_toner" name="Open Street Map (Toner)">
+			<url>http://tile.stamen.com/toner</url>
+			<visible>false</visible>
+			<cacheDir>$mapLayersCacheDir$/OpenStreetMaps</cacheDir>
+		</openStreetMapLayer>
+		<layer id="arcgis_topo" name="ArcGIS World Topo Map">
+			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+			<visible>false</visible>
+			<properties>
+				<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+				<string key="cacheDir" value="$mapLayersCacheDir$/Esri_topo"/>
+				<int key="minZoomLevel" value="1"/>
+				<int key="maxZoomLevel" value="19"/>
+				<int key="topZoomLevel" value="21"/>
+				<int key="tileSize" value="256"/>
+			</properties>
+		</layer>
+		<layer id="arcgis_canvas" name="ArcGIS Canvas World LightGray Base">
+			<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+			<visible>true</visible>
+			<properties>
+				<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+				<string key="cacheDir" value="$mapLayersCacheDir$/Esri_Canvas_World_Light_Gray_Base"/>
+				<int key="minZoomLevel" value="1"/>
+				<int key="maxZoomLevel" value="19"/>
+				<int key="topZoomLevel" value="21"/>
+				<int key="tileSize" value="256"/>
+			</properties>
+		</layer>
+	</map>
+	<explorerTasks>
+		<explorerTask name="Timeseries Viewer/Editor">
+			<iconFile>timeseries.png</iconFile>
+			<mnemonic>T</mnemonic>
+			<taskClass>nl.wldelft.fews.gui.plugin.timeseries.EditorTimeSeriesDialog</taskClass>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<allowMultipleInstances>true</allowMultipleInstances>
+			<accelerator>ctrl T</accelerator>
+			<doubleClickLocationEnabled>true</doubleClickLocationEnabled>
+			<loadAtStartup>true</loadAtStartup>
+		</explorerTask>
+		<explorerTask name="Spatial Data Display">
+			<iconFile>map_grid.png</iconFile>
+			<mnemonic>G</mnemonic>
+			<arguments>GridDisplay</arguments>
+			<taskClass>nl.wldelft.fews.gui.plugin.grid.GridDisplay</taskClass>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<allowMultipleInstances>true</allowMultipleInstances>
+			<accelerator>ctrl G</accelerator>
+		</explorerTask>
+		<explorerTask name="Navigation panel">
+			<iconFile>compass.png</iconFile>
+			<mnemonic>I</mnemonic>
+			<taskClass>nl.wldelft.fews.gui.plugin.selection.SegmentSelectionDialog</taskClass>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<accelerator>ctrl I</accelerator>
+			<toolWindow>true</toolWindow>
+			<loadAtStartup>true</loadAtStartup>
+		</explorerTask>
+		<explorerTask name="Manual Forecast">
+			<iconFile>manforc.png</iconFile>
+			<mnemonic>M</mnemonic>
+			<displayConfigFileName>ManualForecastDisplay</displayConfigFileName>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<allowMultipleInstances>false</allowMultipleInstances>
+			<accelerator>ctrl N</accelerator>
+			<loadAtStartup>true</loadAtStartup>
+		</explorerTask>
+		<explorerTask name="Forecast Management">
+			<iconFile>forcman.png</iconFile>
+			<mnemonic>F</mnemonic>
+			<predefinedDisplay>forecast management</predefinedDisplay>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<allowMultipleInstances>false</allowMultipleInstances>
+			<accelerator>ctrl F</accelerator>
+		</explorerTask>
+		<explorerTask name="Archive Catalogue">
+			<iconFile>Archive.png</iconFile>
+			<mnemonic>Q</mnemonic>
+			<displayConfigFileName>ArchiveModuleDisplay</displayConfigFileName>
+			<toolbarTask>false</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<accelerator>ctrl Q</accelerator>
+			<loadAtStartup>false</loadAtStartup>
+		</explorerTask>
+		<explorerTask name="Separator">
+			<separator/>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<loadAtStartup>false</loadAtStartup>
+		</explorerTask>
+		<explorerTask name="Workflow Navigator">
+			<iconFile>topology.png</iconFile>
+			<mnemonic>W</mnemonic>
+			<predefinedDisplay>workflow navigator</predefinedDisplay>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<accelerator>ctrl W</accelerator>
+			<loadAtStartup>false</loadAtStartup>
+		</explorerTask>
+		<explorerTask name="System Monitor">
+			<iconFile>system_monitor.png</iconFile>
+			<mnemonic>S</mnemonic>
+			<displayConfigFileName>SystemMonitorDisplay</displayConfigFileName>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<accelerator>ctrl S</accelerator>
+			<loadAtStartup>false</loadAtStartup>
+		</explorerTask>
+		<explorerTask name="Database Viewer">
+			<iconFile>database.gif</iconFile>
+			<mnemonic>L</mnemonic>
+			<predefinedDisplay>time series lister</predefinedDisplay>
+			<toolbarTask>true</toolbarTask>
+			<menubarTask>true</menubarTask>
+			<accelerator>ctrl L</accelerator>
+			<loadAtStartup>false</loadAtStartup>
+		</explorerTask>
+	</explorerTasks>
+	<statusBarConfig>
+		<description>Standard date-time format</description>
+		<dateTimeFormat>HH:mm:ss</dateTimeFormat>
+		<timeGMT>true</timeGMT>
+		<timeCurrent>true</timeCurrent>
+		<timeLastRefresh>true</timeLastRefresh>
+		<statusOfSystem>true</statusOfSystem>
+		<mouseCoordinates>true</mouseCoordinates>
+		<userName>true</userName>
+	</statusBarConfig>
+	<dateTime>
+		<timeZoneName>GMT</timeZoneName>
+		<dateTimeFormat>dd-MM-yyyy HH:mm:ss</dateTimeFormat>
+		<cardinalTimeStep unit="hour" multiplier="6"/>
+		<adjustSystemTimeAutomatically>false</adjustSystemTimeAutomatically>
+	</dateTime>
+	<logPanelConfig>
+		<clientFilter>
+			<clientId>Stand alone</clientId>
+			<logFilter>
+				<level>DEBUG</level>
+				<eventType>system</eventType>
+			</logFilter>
+			<logFilter>
+				<level>DEBUG</level>
+				<eventType>debug</eventType>
+			</logFilter>
+		</clientFilter>
+		<clientFilter>
+			<clientId>Operator Client</clientId>
+			<logFilter>
+				<level>WARN</level>
+				<eventType>system</eventType>
+			</logFilter>
+			<logFilter>
+				<level>WARN</level>
+				<eventType>debug</eventType>
+			</logFilter>
+		</clientFilter>
+	</logPanelConfig>
+	<panelSizes>
+		<loggingPanelSize>15</loggingPanelSize>
+		<listsPanelSize>25</listsPanelSize>
+		<filterListSize>40</filterListSize>
+		<locationListSize>40</locationListSize>
+		<parameterListSize>40</parameterListSize>
+		<forecastListSize>5</forecastListSize>
+	</panelSizes>
+</explorer>
