@@ -58,7 +58,7 @@ print([x for x in pyodbc.drivers() if x.startswith('Microsoft Access Driver')])
 ```
 If drivers are installed, the list will show the 'Microsoft Access Driver (*.mdb, *.accdb)'* driver. Otherwise, the list will return empty. 
 
-**If the drivers are not installed, you can obtain them from [here](https://www.microsoft.com/en-US/download/details.aspx?id=13255) **
+**If the drivers are not installed, you can obtain them from**[here](https://www.microsoft.com/en-US/download/details.aspx?id=13255)
 
 In case the Access Database Engine could not be installed because of discrepancies between versions of Office installed (32-64 bits), please install the Microsoft ACE drivers on pasive mode from the command line: 
 
