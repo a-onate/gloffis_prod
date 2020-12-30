@@ -60,6 +60,8 @@ The update and forecast workflows are both entered by clicking on “add new mod
 <img width="500" height="210" src="https://github.com/a-onate/gloffis_prod/blob/main/doc/images/add_wflow_model_fig6.png">
 </p>
 
+## Step 5:
+
 Once the information has been entered and saved, the queries must be run, to retrieve the latest changes done to the tables. To run the queries in batch mode, open the *frm_Run_mtbl_Scripting_queries* form and click on *“Run Queries”*
 
 <p align="center">
@@ -70,9 +72,17 @@ Once the information has been entered and saved, the queries must be run, to ret
 <img width="330" height="100" src="https://github.com/a-onate/gloffis_prod/blob/main/doc/images/add_wflow_model_fig8.png">
 </p>
 
+## Step 6:
+
 Close the MS Access Database, and using your preferred python IDE execute the master script (scripts\gloffis\master.py), making sure the paths are correct. 
 
+## Step 7:
+
 Finally, open the Delft-FEWS GUI and the workflows for the wflow model for the Moselle catchment will successfully be added. 
+
+<p align="center">
+<img width="320" height="260" src="https://github.com/a-onate/gloffis_prod/blob/main/doc/images/add_wflow_model_fig9.png">
+</p>
 
 
 [^1]: Note: Although the update workflow should only include information about the data products used as observation and online reanalysis, it is also advised to fill the "NWP used for forecast" field, with the same NWP used for online reanalysis, to avoid problems with the database.  This will not affect the forecast workflow.
