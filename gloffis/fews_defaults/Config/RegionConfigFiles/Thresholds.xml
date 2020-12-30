@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thresholds xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholds.xsd">
+	<levelThreshold id="P_20mm" name="Warning level precipitation observed">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<levelThreshold id="Clonmel_threshold_01" name="Threshold 1: demountables 1-9 go up">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<levelThreshold id="Clonmel_threshold_01a" name="Initial flooding of Convent Road">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<levelThreshold id="Clonmel_threshold_02" name="Threshold 2: Convent Road closure">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<levelThreshold id="Clonmel_threshold_02a" name="Dry Arch Bridge and demountables 10-17 go up">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<levelThreshold id="Clonmel_threshold_02b" name="Q5 heads up">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<levelThreshold id="Clonmel_threshold_03" name="Threshold 3: Q10; demountables 18-26 go up">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<levelThreshold id="Clonmel_threshold_03a" name="Q50; Suir Island evacuated">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<levelThreshold id="Clonmel_design_event" name="Design Event: Q100">
+		<upWarningLevel>1</upWarningLevel>
+		<downWarningLevel>0</downWarningLevel>
+		<upIntId>1</upIntId>
+		<downIntId>2</downIntId>
+	</levelThreshold>
+	<actionEvents>
+		<maxDuration unit="day" multiplier="10"/>
+	</actionEvents>
+	<thresholdExpiryTime>
+		<thresholdExpiryTime unit="hour" multiplier="48"/>
+	</thresholdExpiryTime>
+</thresholds>

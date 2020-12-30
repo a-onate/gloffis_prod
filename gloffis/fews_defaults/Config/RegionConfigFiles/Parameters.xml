@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--For meteo parameters use the short name from this database: https://apps.ecmwf.int/codes/grib/param-db-->
+<parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
+	<parameterGroup id="Precipitation">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="tp">
+			<shortName>Total precipitation</shortName>
+			<standardName>precipitation_amount</standardName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Pressure">
+		<parameterType>instantaneous</parameterType>
+		<unit>mbar</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="sp">
+			<shortName>Surface pressure</shortName>
+			<standardName>air_pressure</standardName>
+		</parameter>
+		<parameter id="vp">
+			<shortName>Vapour pressure</shortName>
+			<standardName>water_vapor_partial_pressure_in_air</standardName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Radiation">
+		<parameterType>mean</parameterType>
+		<unit>W/m2</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="ssrd">
+			<shortName>Surface solar radiation downwards</shortName>
+			<standardName>downwelling_shortwave_flux_in_air</standardName>
+		</parameter>
+		<parameter id="ssrd_dif_acc">
+			<shortName>Surface solar radiation downwards diffuse accumulated</shortName>
+		</parameter>
+		<parameter id="ssrd_dir_acc">
+			<shortName>Surface solar radiation downwards direct accumulated</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Evaporation">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="pevap">
+			<shortName>pevap</shortName>
+		</parameter>
+		<parameter id="E.ref.mak">
+				<shortName>Potential Ref Evap</shortName>
+			</parameter>
+	</parameterGroup>
+	<parameterGroup id="Temperature">
+		<parameterType>instantaneous</parameterType>
+		<unit>oC</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="2t">
+			<shortName>2 metre temperature</shortName>
+			<standardName>air_temperature</standardName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Discharge">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3/s</unit>
+		<valueResolution>0.001</valueResolution>
+		<parameter id="Q.rated">
+			<shortName>Flow (rated)</shortName>
+		</parameter>
+		<parameter id="Q.extrapolated">
+			<shortName>Flow (extrapolated)</shortName>
+		</parameter>
+		<parameter id="Q.noRouted">
+			<shortName>Flow previous routing</shortName>
+		</parameter>
+		<parameter id="Q.simulated">
+			<shortName>Flow simulated</shortName>
+		</parameter>
+		<parameter id="Q.forecast">
+			<shortName>Flow (forecast)</shortName>
+		</parameter>
+		<parameter id="Q.merged">
+			<shortName>Flow (observed)</shortName>
+		</parameter>
+		<parameter id="Q.error">
+			<shortName>Flow (error)</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Water Level">
+		<parameterType>instantaneous</parameterType>
+		<unit>m</unit>
+		<valueResolution>0.001</valueResolution>
+		<usesDatum>true</usesDatum>
+		<parameter id="H.obs">
+			<shortName>Level (observed)</shortName>
+		</parameter>
+		<parameter id="H.routed">
+			<shortName>Level (forecast)</shortName>
+		</parameter>
+		<parameter id="H.forecast">
+			<shortName>Level forecast</shortName>
+		</parameter>
+		<parameter id="H.surge.forecast">
+			<shortName>Surge forecast</shortName>
+		</parameter>
+		<parameter id="H.simulated">
+			<shortName>Level (simulation)</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Wind">
+		<parameterType>instantaneous</parameterType>
+		<unit>m/s</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="U10.forecast">
+			<shortName>U10.forecast</shortName>
+		</parameter>
+		<parameter id="V10.forecast">
+			<shortName>V10.forecast</shortName>
+		</parameter>
+		<parameter id="UWG.forecast">
+			<shortName>UWG.forecast</shortName>
+		</parameter>
+		<parameter id="VWG.forecast">
+			<shortName>VWG.forecast</shortName>
+		</parameter>
+		<parameter id="U10.obs">
+			<shortName>U10.obs</shortName>
+		</parameter>
+		<parameter id="V10.obs">
+			<shortName>V10.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Soil">
+			<parameterType>instantaneous</parameterType>
+			<unit>mm</unit>
+			<parameter id="Upper.zone" name="Upper Zone">
+				<shortName>Upper.Zone</shortName>
+			</parameter>
+			<parameter id="Lower.zone" name="Lower Zone">
+				<shortName>Lower.Zone</shortName>
+			</parameter>
+			<parameter id="Soil.moisture" name="Soil Moisture">
+				<shortName>Soil.Moisture</shortName>
+			</parameter>
+			<parameter id="Interception" name="Interception">
+				<shortName>Interception</shortName>
+			</parameter>
+		</parameterGroup>
+		<parameterGroup id="SWE (Snow Water Equivalent)">
+			<parameterType>accumulative</parameterType>
+			<unit>mm</unit>
+			<valueResolution>0.01</valueResolution>
+			<parameter id="ds" name="DrySnow">
+				<shortName>ds</shortName>
+			</parameter>
+		</parameterGroup>
+</parameterGroups>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
+	<!--download-->
+	<moduleInstanceDescriptor id="download_icon_linux_template"/>
+	<moduleInstanceDescriptor id="download_reanalysis_ECMWF_era5"/>
+	<moduleInstanceDescriptor id="copy_to_importfolder"/>
+	<!--Preprocess NWP imports-->
+	<moduleInstanceDescriptor id="preprocess_import_nwp"/>
+	<!-- Import post-processing -->
+	<moduleInstanceDescriptor id="calculate_ssrd"/>
+	<moduleInstanceDescriptor id="calculate_pet_makkink"/>
+	<moduleInstanceDescriptor id="create_reanalysis_set_t0">
+		<description>ForecastLengthEstimator - identifies latest external forecast time t0</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="create_reanalysis">
+		<description>Create online reanalysis, based on a NWP product</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="nwp_grid_temporal_aggregation"/>
+	<moduleInstanceDescriptor id="nwp_grid_to_wflow_grid_resampling"/>
+	<!--wflow; below are 'generic' wflow moduleInstanceIDs-->
+	<moduleInstanceDescriptor id="wflow_update">
+		<description>Placeholder for wflow update runs - for mapping to single, generic moduleInstance ID</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="wflow_update_template">
+		<description>Placeholder for template</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="wflow_forecast">
+		<description>Placeholder for wflow forecast runs - for mapping to single, generic moduleInstance ID</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="wflow_forecast_template">
+		<description>Placeholder for template</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="wflow_update_find_start_time">
+		<description>Identify start time of update run, based on available state</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="wflow_forecast_idenitfy_end_time">
+		<description>Identify end time of forecast run, based on most recent NWP forecast available</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="reanalysis_temporal_spatial_processing">
+		<description>Processes reanalysis data at NWP resolutions to wflow resolutions</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="nwp_forecast_temporal_spatial_processing">
+		<description>Processes reanalysis data at NWP resolutions to wflow resolutions</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="create_forecast_scenario">
+		<description>Create forecast scenario through merging reanalysis and forecast NWP products</description>
+	</moduleInstanceDescriptor>
+	</moduleInstanceDescriptors>
