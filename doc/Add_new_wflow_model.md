@@ -1,6 +1,6 @@
 # Adding a new wflow hydrological model to GLOFFIS.
 
-The production system gloffis_prod generates Delft-FEWS configuration files relying on the information stored in a MS Access Database and the series of scripts presented in this repository, to contribute to the automatization of the system’s set-up. The external database holds the information related to the system’s characteristics (according to the specific design adopted) mainly associated to the data products considered and wflow models incorporated. The scripts retrieve that information and produce XML configuration files belonging to the directories mentioned in the readme file of the src folder.
+The production system gloffis_prod generates Delft-FEWS configuration files relying on the information stored in a MS Access Database and the series of scripts presented in this repository, to contribute to the automatization of the system’s set-up. The external database holds the information related to the system’s characteristics (according to the specific design adopted) mainly associated to the data products considered and wflow models incorporated. The scripts retrieve that information and produce XML configuration files belonging to the directories mentioned in the readme file.
 In order to illustrate how the system can be edited using the production system to include a new wflow hydrological model for its execution, this document proposes a series of steps applied to incorporate the wflow model for the Moselle catchment in France as an example.
 
 ## Step 1: 
@@ -13,11 +13,11 @@ Arrange the proposed directory structure as the one shown in Fig. 1. The FEWS bi
 
 
 ## Step 2: 
-Create the conda environment and make sure the MS ACE drivers are installed in your computer, as stated in the readme file of the src folder *(C:\FEWS_19_02\gloffis_prod\scripts\src\readme.txt)*. 
+Create the conda environment and make sure the MS ACE drivers are installed in your computer, as stated in the readme file. 
 
 ## Step 3: 
 
-Unzip the Example_Moselle.zip file and place the folder *“wflow_moselle_20200720”* (containing ColdStateFiles and ModuleDataSetFiles for the example model) in the following directory: *C:\FEWS_19_02\gloffis_prod\scripts\gloffis\externals\wflow_modules*. 
+Unzip the *Example_Moselle.zip* file and place the folder *“wflow_moselle_20200720”* (containing ColdStateFiles and ModuleDataSetFiles for the example model) in the following directory: *C:\FEWS_19_02\gloffis_prod\scripts\gloffis\externals\wflow_modules*. 
 
 ## Step 4:
 
@@ -42,7 +42,7 @@ To use the Access Database forms, click on *frm_MasterForm_DataMgmt*.
 <img width="280" height="120" src="https://github.com/a-onate/gloffis_prod/blob/main/doc/images/add_wflow_model_fig2.png">
 </p>
 
-In this form, the section “Manage wflow models’ information” (Fig. 3) will be of interest to add the new model. 
+In this form, the section *“Manage wflow models’ information”* (Fig. 3) will be of interest to add the new model. 
 
 <p align="center">
 <img width="320" height="280" src="https://github.com/a-onate/gloffis_prod/blob/main/doc/images/add_wflow_model_fig3.png">
@@ -74,7 +74,7 @@ Once the information has been entered and saved, the queries must be run, to ret
 
 ## Step 6:
 
-Close the MS Access Database, and using your preferred python IDE execute the master script (scripts\gloffis\master.py), making sure the paths are correct. 
+Close the MS Access Database, and using your preferred python IDE execute the master script *(C:\FEWS_19_02\gloffis_prod\scripts\gloffis\master.py)*, making sure the paths are correct. 
 
 ## Step 7:
 
@@ -85,4 +85,4 @@ Finally, open the Delft-FEWS GUI and the workflows for the wflow model for the M
 </p>
 
 
-[^1]: Note: Although the update workflow should only include information about the data products used as observation and online reanalysis, it is also advised to fill the "NWP used for forecast" field, with the same NWP used for online reanalysis, to avoid problems with the database.  This will not affect the forecast workflow.
+[^1]: Note: Although the update workflow should only include information about the data products used as observation and online reanalysis, it is also advised to fill the *"NWP used for forecast"* field, with the same NWP used for online reanalysis, to avoid problems with the database.  This will not affect the forecast workflow.
