@@ -83,6 +83,23 @@ $> AccessDatabaseEngine.exe /passive
 
 - To learn how to use the tool by adding a new wflow model to the database and thus to the hydrological forecasting system, please visit the [Add_new_wflow_model](https://github.com/a-onate/gloffis_prod/blob/main/doc/Add_new_wflow_model.md) file in the documentation. 
 
-The scripts composing the system are available from 2020 at https://github.com/a-onate/gloffis_prod. Other software used in this project is Delft-FEWS (Werner et al., 2013) freely available for end-users at www.delft-fews.eu, and wflow (Imhoff et al., 2020), whose open-source code can be found at https://github.com/openstreams/wﬂow. Finally, the data used for this work includes the Numerical Weather Prediction products NWP ICON (ICOsahedral Nonhydrostatic model) made available free of charge by The Deutscher Wetterdienst (DWD) at http://opendata.dwd.de/ and the ERA5 reanalysis product distributed freely by the European Centre for Medium-Range Weather Forecasts (ECMWF) via https://cds.climate.copernicus.eu.
+### Other software and data needed to use this tool
+
+The scripts composing the system are available from 2020 at https://github.com/a-onate/gloffis_prod. 
+Other software used in this project is: 
+- Delft-FEWS (Werner et al., 2013) freely available for end-users at https://oss.deltares.nl/web/delft-fews/downloads
+- wflow (Imhoff et al., 2020), whose open-source code can be found at https://github.com/openstreams/wﬂow. 
+
+The data used for this work includes the Numerical Weather Prediction products NWP ICON (ICOsahedral Nonhydrostatic model) made available free of charge by The Deutscher Wetterdienst (DWD) at http://opendata.dwd.de/ and the ERA5 reanalysis product distributed freely by the European Centre for Medium-Range Weather Forecasts (ECMWF) via https://cds.climate.copernicus.eu. 
+
+#### To download the Delft-FEWS 2019.02 Demo software: 
+
+1. Go to https://oss.deltares.nl/web/delft-fews/downloads and register (Create a MyDeltares account) 
+2. Verify your email address by clicking the link sent to your email.
+3. To download the Demo, the page will show a Subversion (SVN) Login pop-up. Please use your MyDeltares username (which is the first part of your email) or your Windows Login ID along with your MyDeltares password to log in.
+4. Click over "Delft-FEWS 2019.02 Demo Software" to start the download. 
+
+
+
 
 
