@@ -92,6 +92,9 @@ Other software used in this project is:
 
 The data used for this work includes the Numerical Weather Prediction products NWP ICON (ICOsahedral Nonhydrostatic model) made available free of charge by The Deutscher Wetterdienst (DWD) at http://opendata.dwd.de/ and the ERA5 reanalysis product distributed freely by the European Centre for Medium-Range Weather Forecasts (ECMWF) via https://cds.climate.copernicus.eu. 
 
+Data already retrieved from the previous two mentioned sources that could be used to test the configuration can be found [here](https://utpl-my.sharepoint.com/:u:/g/personal/ayonate_utpl_edu_ec/ES2beJ4hqL5GgjghiUrj4tMBGHlftvzK9MlVODmuULWfHQ?e=3mGNJX). *[All rights belonging to their respective owners]* 
+<sub>The file should be decompressed and the folders "icon-eu" and "era5" should be placed in the Delft-FEWS' Import folder</sub>
+
 #### To download the Delft-FEWS 2019.02 Demo software: 
 
 1. Go to https://oss.deltares.nl/web/delft-fews/downloads and register (Create a MyDeltares account) 
