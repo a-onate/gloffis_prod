@@ -100,6 +100,8 @@ The data used for this work includes the Numerical Weather Prediction products N
 4. Click over "Delft-FEWS 2019.02 Demo Software" to start the download. 
 
 
+**Note that:** 
+<sub>The Delft-FEWS configuration folder (Config) should have at least the following folders: ColdStateFiles, DisplayConfigFiles, IconFiles, IdMapFiles, MapLayerFiles, ModuleConfigFiles, ModuleDataSetFiles, RegionConfigFiles, ReportImageFiles, ReportTemplateFiles, RootConfigFiles, SystemConfigFiles, UnitConversionFiles, WorkflowFiles.</sub>
 
 
 
