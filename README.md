@@ -34,6 +34,11 @@ Before starting, the proposed directory structure shown in the following figure 
 <img width="180" height="160" src="https://github.com/a-onate/gloffis_prod/blob/main/doc/images/readme_folder_structure.png">
 </p>
 
+If a **different file structure** is followed, then the paths to: 
+- The MS Access database 
+- The scripted and defaults Delft-FEWS configuration folder, and 
+- The path to the final merged Delft-FEWS configuration folder 
+should be specified in the master.py file. 
 
 To run the scripts, [Anaconda](https://www.anaconda.com/download/) will be needed. Once you have it installed on your PC, open the command prompt window and use the change directory command `cd` to go to the src folder of this repository, and create a Python environment using the environment.yml file.
 
@@ -73,7 +78,8 @@ $> AccessDatabaseEngine_X64.exe /passive
 $> AccessDatabaseEngine.exe /passive
 ```
 
-- To run all the scripts in batch mode and generate all configuration files at once, please run the "master.py" script (located in the folder: *gloffis\master.py*)
+- To run all the scripts in batch mode and generate all configuration files at once, please run the "master.py" script (located in the folder: *gloffis\master.py*). 
+**Please note that:** If the folder structure adopted is different to the one proposed in the "Installation" section, then the paths descriptions should be changed according to your preferred structure in the master.py script. 
 
 - To learn how to use the tool by adding a new wflow model to the database and thus to the hydrological forecasting system, please visit the [Add_new_wflow_model](https://github.com/a-onate/gloffis_prod/blob/main/doc/Add_new_wflow_model.md) file in the documentation. 
 
