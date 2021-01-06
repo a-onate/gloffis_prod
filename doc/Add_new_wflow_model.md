@@ -11,6 +11,10 @@ Arrange the proposed directory structure as the one shown in Fig. 1. The FEWS bi
 <img width="200" height="150" src="https://github.com/a-onate/gloffis_prod/blob/main/doc/images/add_wflow_model_fig1.png">
 </p>
 
+**Please note that:** If the folder structure adopted is different to the one proposed, then the paths descriptions should be changed according to your preferred structure in the master.py script for: 
+- The MS Access database 
+- The scripted and defaults Delft-FEWS configuration folder, and 
+- The final merged Delft-FEWS configuration folder.
 
 ## Step 2: 
 Create the conda environment and make sure the MS ACE drivers are installed in your computer, as stated in the readme file. 
@@ -21,7 +25,7 @@ Unzip the *Example_Moselle.zip* file and place the folder *“wflow_moselle_2020
 
 ## Step 4:
 
-Add the information related to the wflow model to the database *(located in: C:\FEWS_19_02\gloffis_prod\scripts\gloffis\externals\Database_gloffis_prod)*. The required information refers to the model characteristics: grid definition, temporal resolution, workflow set-up to run the model in update and forecasting mode, and wflow bundle used, which is shown in the table below: 
+Add the information related to the wflow model to the database *(the database <Database_gloffis_prod> is located in: C:\FEWS_19_02\gloffis_prod\scripts\gloffis\externals)*. The required information refers to the model characteristics: grid definition, temporal resolution, workflow set-up to run the model in update and forecasting mode, and wflow bundle used, which is shown in the table below: 
 
 <p align="center">
 <img width="500" height="250" src="https://github.com/a-onate/gloffis_prod/blob/main/doc/images/add_wflow_model_table1.png">
